@@ -1,0 +1,1 @@
+const o=document.querySelector("#o");document.querySelector("button")?.addEventListener("click",()=>o.textContent=document.querySelector("input").value||new Date().toLocaleString())
