@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7. Frames and Iframes</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.6; }
+    iframe { border: 2px solid #557; }
+    .menu a { margin-right: 14px; }
+  </style>
+</head>
+<body>
+
+  <h1>Inline Frames (iframe)</h1>
+
+  <p>
+    An <code>&lt;iframe&gt;</code> shows one web page inside another page.
+    The old <code>&lt;frameset&gt;</code> tag was removed in HTML5, so iframe is
+    the correct way to do this today.
+  </p>
+
+  <h2>1. A local page inside an iframe</h2>
+  <iframe src="02-lists.html" width="600" height="280" title="Lists page"></iframe>
+
+  <h2>2. An iframe as the target of links</h2>
+  <p class="menu">
+    Click a link and the page opens in the box below:
+    <a href="01-basic-page.html" target="viewer">Basic Page</a>
+    <a href="03-tables.html" target="viewer">Tables</a>
+    <a href="10-timetable.html" target="viewer">Timetable</a>
+  </p>
+
+  <iframe name="viewer" src="01-basic-page.html" width="640" height="320" title="Page viewer"></iframe>
+
+  <h2>3. An external website inside an iframe</h2>
+  <p>
+    Many sites block being framed for security reasons, so this may stay blank.
+    A Google Map embed is one that normally works.
+  </p>
+  <iframe
+    src="https://www.openstreetmap.org/export/embed.html?bbox=80.18%2C13.00%2C80.25%2C13.05&layer=mapnik"
+    width="600" height="320" title="Map of Chennai"></iframe>
+
+  <h2>4. Useful iframe attributes</h2>
+  <ul>
+    <li><code>src</code> &mdash; the page to display</li>
+    <li><code>width</code> / <code>height</code> &mdash; size of the frame in pixels</li>
+    <li><code>name</code> &mdash; lets a link with <code>target="name"</code> load into it</li>
+    <li><code>title</code> &mdash; describes the frame for screen readers</li>
+    <li><code>loading="lazy"</code> &mdash; loads only when scrolled into view</li>
+  </ul>
+
+</body>
+</html>

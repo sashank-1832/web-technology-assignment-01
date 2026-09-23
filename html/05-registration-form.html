@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5. Student Registration Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    fieldset { border: 1px solid #99a; padding: 16px 20px; margin-bottom: 20px; max-width: 620px; }
+    legend { font-weight: bold; padding: 0 6px; }
+    label { display: inline-block; width: 150px; vertical-align: top; margin: 6px 0; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      padding: 5px; width: 260px; border: 1px solid #aaa;
+    }
+    .buttons { margin-top: 10px; }
+    button { padding: 8px 18px; margin-right: 8px; }
+  </style>
+</head>
+<body>
+
+  <h1>Student Registration Form</h1>
+
+  <form action="#" method="post">
+
+    <fieldset>
+      <legend>Personal Details</legend>
+
+      <label for="fname">Full Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Enter your full name" required><br>
+
+      <label for="fathername">Father's Name</label>
+      <input type="text" id="fathername" name="fathername"><br>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob"><br>
+
+      <label>Gender</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male" style="width:auto; margin-right:14px;">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female" style="width:auto; margin-right:14px;">Female</label>
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other" style="width:auto;">Other</label><br>
+
+      <label for="blood">Blood Group</label>
+      <select id="blood" name="blood">
+        <option value="">-- Select --</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Contact Details</legend>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="name@example.com" required><br>
+
+      <label for="phone">Mobile Number</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10 digit number"><br>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="4" cols="30" placeholder="Door no, street, city, pincode"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>Course Details</legend>
+
+      <label for="course">Course Applied</label>
+      <select id="course" name="course">
+        <option value="bsc-cs">B.Sc Computer Science</option>
+        <option value="bca">BCA</option>
+        <option value="bcom">B.Com</option>
+        <option value="bba">BBA</option>
+      </select><br>
+
+      <label>Subjects of Interest</label>
+      <input type="checkbox" id="web" name="subject" value="web">
+      <label for="web" style="width:auto; margin-right:14px;">Web Technology</label>
+      <input type="checkbox" id="dbms" name="subject" value="dbms">
+      <label for="dbms" style="width:auto; margin-right:14px;">DBMS</label>
+      <input type="checkbox" id="java" name="subject" value="java">
+      <label for="java" style="width:auto;">Java</label><br>
+
+      <label for="photo">Upload Photo</label>
+      <input type="file" id="photo" name="photo" accept="image/*"><br>
+
+      <label for="pwd">Create Password</label>
+      <input type="password" id="pwd" name="pwd" minlength="6">
+    </fieldset>
+
+    <p>
+      <input type="checkbox" id="agree" name="agree" required>
+      <label for="agree" style="width:auto;">I confirm the details given above are correct.</label>
+    </p>
+
+    <div class="buttons">
+      <button type="submit">Register</button>
+      <button type="reset">Clear form</button>
+    </div>
+
+  </form>
+
+</body>
+</html>

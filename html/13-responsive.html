@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This meta tag is essential for responsive design on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13. Responsive Page with Media Queries</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      line-height: 1.65;
+      color: #23303a;
+      background: #f6f8f9;
+    }
+
+    header {
+      background: #23485c;
+      color: #fff;
+      padding: 26px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; font-size: 1.8rem; }
+
+    /* Navigation: a row on wide screens, a stack on small ones */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      background: #33627c;
+    }
+    nav a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 10px;
+      color: #fff;
+      text-decoration: none;
+      border-right: 1px solid #4a7791;
+    }
+    nav a:last-child { border-right: none; }
+    nav a:hover { background: #4a7791; }
+
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 24px 18px; }
+
+    /* Three columns side by side on a desktop */
+    .cards {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .card {
+      flex: 1 1 300px;
+      background: #fff;
+      border: 1px solid #dde3e7;
+      border-radius: 6px;
+      padding: 18px 20px;
+    }
+    .card h3 { margin-top: 0; color: #23485c; }
+
+    .sidebar {
+      background: #eaf0f3;
+      border-left: 4px solid #33627c;
+      padding: 16px 20px;
+      margin-top: 24px;
+    }
+
+    .status {
+      font-weight: bold;
+      padding: 10px 16px;
+      background: #d7ecd9;
+      border: 1px solid #8cb98f;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    footer {
+      background: #23485c;
+      color: #cfdde5;
+      text-align: center;
+      padding: 18px;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    /* ---------------- MEDIA QUERIES ---------------- */
+
+    /* Tablet: screens up to 900px wide */
+    @media screen and (max-width: 900px) {
+      .card { flex: 1 1 45%; }
+      .status { background: #fdf0d5; border-color: #d9b45c; }
+      .status::after { content: " (tablet layout, under 900px)"; }
+    }
+
+    /* Phone: screens up to 600px wide */
+    @media screen and (max-width: 600px) {
+      header h1 { font-size: 1.4rem; }
+      nav { flex-direction: column; }
+      nav a { border-right: none; border-bottom: 1px solid #4a7791; }
+      .card { flex: 1 1 100%; }
+      .wrap { padding: 16px 12px; }
+      .status { background: #f7dcd8; border-color: #c98277; }
+      .status::after { content: " (phone layout, under 600px)"; }
+    }
+
+    /* Large desktop */
+    @media screen and (min-width: 901px) {
+      .status::after { content: " (desktop layout, 901px and above)"; }
+    }
+
+    /* Print: hide navigation and remove backgrounds */
+    @media print {
+      nav, footer { display: none; }
+      body { background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Web Design</h1>
+    <p>Resize the browser window slowly and watch the layout change</p>
+  </header>
+
+  <nav>
+    <a href="#what">What it is</a>
+    <a href="#how">How it works</a>
+    <a href="#query">Media queries</a>
+    <a href="#tips">Tips</a>
+  </nav>
+
+  <div class="wrap">
+
+    <p class="status">Current layout:</p>
+
+    <div class="cards">
+      <div class="card" id="what">
+        <h3>What is it</h3>
+        <p>
+          One page that adjusts itself to the size of the screen, instead of
+          building a separate site for mobile. The same HTML is reused and only
+          the CSS changes.
+        </p>
+      </div>
+
+      <div class="card" id="how">
+        <h3>How it works</h3>
+        <p>
+          Widths are set in percentages or with flexible layouts rather than fixed
+          pixels, images are limited with <code>max-width: 100%</code>, and media
+          queries change the rules at chosen widths.
+        </p>
+      </div>
+
+      <div class="card" id="query">
+        <h3>Writing a media query</h3>
+        <p>
+          <code>@media screen and (max-width: 600px) { ... }</code> applies the
+          rules inside it only when the screen is 600 pixels wide or narrower.
+        </p>
+      </div>
+    </div>
+
+    <div class="sidebar" id="tips">
+      <h3>Breakpoints used on this page</h3>
+      <ul>
+        <li><b>901px and above</b> &mdash; three cards in a row, horizontal menu</li>
+        <li><b>up to 900px</b> &mdash; two cards per row</li>
+        <li><b>up to 600px</b> &mdash; one card per row, menu stacks vertically</li>
+        <li><b>print</b> &mdash; menu and footer are removed</li>
+      </ul>
+      <p>
+        The <code>&lt;meta name="viewport"&gt;</code> tag in the head is what tells a
+        phone to use its real width. Without it, media queries appear to do nothing
+        on a mobile device.
+      </p>
+      <img src="images/mountain.svg" alt="Sample image that scales with the layout" width="480">
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Exercise 13 &mdash; HTML Lab &middot; Try File &rarr; Print Preview to see the print media query.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11. Internal and External CSS</title>
+
+  <!-- EXTERNAL CSS: styles are kept in a separate .css file -->
+  <link rel="stylesheet" href="css/external-style.css">
+
+  <!-- INTERNAL CSS: styles written inside this page only -->
+  <style>
+    .internal-demo {
+      background: #e4eff3;
+      border: 2px dashed #2f6d7f;
+      padding: 14px 20px;
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+    .internal-demo h3 {
+      margin-top: 0;
+      color: #b3541e;
+    }
+    ul.tick {
+      list-style: square;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Three Ways to Add CSS</h1>
+
+  <div class="card">
+    <h2>1. External CSS</h2>
+    <p>
+      The styles for this page's body, headings and cards come from
+      <code>css/external-style.css</code>. It is attached in the head using:
+    </p>
+    <p><code>&lt;link rel="stylesheet" href="css/external-style.css"&gt;</code></p>
+    <p>
+      This is the best method for a real website, because one file can style every
+      page and a single edit updates all of them.
+    </p>
+  </div>
+
+  <div class="internal-demo">
+    <h3>2. Internal CSS</h3>
+    <p>
+      The dashed border and light blue background of this box are written inside a
+      <code>&lt;style&gt;</code> block in the head of this page. It applies only here,
+      which suits a one-off page or a quick test.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>3. Inline CSS</h2>
+    <p style="color: #b3541e; font-size: 1.15rem; font-weight: bold;">
+      This sentence is styled with a style attribute written directly on the tag.
+    </p>
+    <p>
+      Inline CSS has the highest priority but cannot be reused, so keep it for
+      small exceptions only.
+    </p>
+  </div>
+
+  <div class="note">
+    <h2>Which one wins?</h2>
+    <ul class="tick">
+      <li>Inline style beats internal and external</li>
+      <li>Whichever of internal or external comes later in the head wins</li>
+      <li>A more specific selector beats a general one, whatever the method</li>
+    </ul>
+  </div>
+
+  <p><a href="12-css-properties.html">Next: CSS selectors, colours, fonts and the box model &rarr;</a></p>
+
+</body>
+</html>

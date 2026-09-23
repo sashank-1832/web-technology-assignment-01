@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15. Personal Portfolio &mdash; Anitha Ramesh</title>
+  <style>
+    :root {
+      --ink: #16202b;
+      --body: #46545f;
+      --paper: #fcfcfa;
+      --panel: #10242a;
+      --green: #3f6f5c;
+      --rule: #dcdcd4;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--body);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .shell { display: flex; min-height: 100vh; }
+
+    /* ---------- Left panel ---------- */
+    .panel {
+      width: 300px;
+      flex-shrink: 0;
+      background: var(--panel);
+      color: #d6e0dd;
+      padding: 44px 30px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .panel img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: #1c3a41;
+      display: block;
+    }
+    .panel h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      color: #fff;
+      margin: 22px 0 6px;
+      font-weight: normal;
+    }
+    .panel .role { color: #8fb3a8; margin: 0 0 26px; }
+    .panel nav a {
+      display: block;
+      color: #d6e0dd;
+      text-decoration: none;
+      padding: 7px 0;
+      border-bottom: 1px solid #1e3840;
+    }
+    .panel nav a:hover { color: #fff; padding-left: 8px; transition: padding 0.18s ease; }
+    .panel .contact { margin-top: 30px; font-size: 0.9rem; }
+    .panel .contact a { color: #8fb3a8; }
+
+    /* ---------- Right content ---------- */
+    main { flex: 1; padding: 56px 60px; max-width: 800px; }
+
+    section { margin-bottom: 54px; }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin: 0 0 6px;
+    }
+    h2 + .rule {
+      width: 46px;
+      height: 3px;
+      background: var(--green);
+      margin-bottom: 20px;
+    }
+
+    .intro p:first-child {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* Skills */
+    .skills { list-style: none; padding: 0; margin: 0; }
+    .skills li { margin-bottom: 14px; }
+    .skills span { display: block; color: var(--ink); margin-bottom: 4px; }
+    .bar { background: #e9e9e2; height: 8px; }
+    .bar i { display: block; height: 8px; background: var(--green); }
+
+    /* Projects */
+    .project {
+      border-top: 1px solid var(--rule);
+      padding: 18px 0;
+    }
+    .project h3 { margin: 0 0 4px; color: var(--ink); font-size: 1.05rem; }
+    .project .tools { font-size: 0.85rem; color: var(--green); margin: 0 0 8px; }
+    .project p { margin: 0; }
+
+    /* Education table */
+    table { border-collapse: collapse; width: 100%; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+    th { color: var(--ink); }
+
+    /* Contact form */
+    form { max-width: 460px; }
+    label { display: block; color: var(--ink); margin-top: 14px; }
+    input, textarea {
+      width: 100%;
+      padding: 9px 10px;
+      margin-top: 5px;
+      border: 1px solid #ccccc2;
+      background: #fff;
+      font: inherit;
+    }
+    input:focus, textarea:focus { outline: 2px solid var(--green); border-color: var(--green); }
+    button {
+      margin-top: 18px;
+      padding: 11px 26px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+    button:hover { background: #33594a; }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 800px) {
+      .shell { flex-direction: column; }
+      .panel { width: 100%; height: auto; position: static; padding: 30px 24px; }
+      .panel nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+      .panel nav a { border-bottom: none; padding: 4px 0; }
+      main { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="panel">
+    <img src="images/logo.svg" alt="Profile picture">
+    <h1>Anitha Ramesh</h1>
+    <p class="role">Front-end developer in training</p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="contact">
+      <p>
+        Chennai, Tamil Nadu<br>
+        <a href="mailto:anitha@example.com">anitha@example.com</a><br>
+        <a href="tel:+919876543210">+91 98765 43210</a>
+      </p>
+      <p>
+        <a href="#" target="_blank" rel="noopener">GitHub</a> &middot;
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </aside>
+
+  <main>
+
+    <section id="about" class="intro">
+      <h2>About me</h2>
+      <div class="rule"></div>
+      <p>
+        I build small, careful web pages and I care most about the part users
+        actually touch: readable type, layouts that survive a narrow screen, and
+        forms that tell you what went wrong.
+      </p>
+      <p>
+        I am in my second year of B.Sc Computer Science. Most of what I know came
+        from rebuilding pages I liked until they behaved the same way, and from the
+        weekend coding club where I now help first-year students with their labs.
+        Right now I am learning JavaScript and working through a set of projects
+        that each fix one thing I got wrong in the last one.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="rule"></div>
+      <ul class="skills">
+        <li><span>HTML5 &amp; semantic markup</span><div class="bar"><i style="width:90%"></i></div></li>
+        <li><span>CSS, flexbox and media queries</span><div class="bar"><i style="width:80%"></i></div></li>
+        <li><span>Bootstrap 5</span><div class="bar"><i style="width:70%"></i></div></li>
+        <li><span>JavaScript basics</span><div class="bar"><i style="width:50%"></i></div></li>
+        <li><span>SQL and MySQL</span><div class="bar"><i style="width:60%"></i></div></li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="rule"></div>
+
+      <div class="project">
+        <h3>Department timetable page</h3>
+        <p class="tools">HTML, CSS</p>
+        <p>
+          A printable timetable for six classes, built with merged table cells so the
+          lab sessions and breaks read correctly. Staff can edit one file instead of
+          five separate documents.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Library book tracker</h3>
+        <p class="tools">HTML, CSS, JavaScript, localStorage</p>
+        <p>
+          A single page that records borrowed books and shows which are due this week.
+          Everything is stored in the browser, so it works without a server.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>Coding club site</h3>
+        <p class="tools">Bootstrap 5</p>
+        <p>
+          A three-page site for weekend session notices, with a mobile menu and a
+          registration form. My first project where the layout worked on a phone
+          without any patching afterwards.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <table>
+        <tr>
+          <th>Course</th>
+          <th>Institution</th>
+          <th>Year</th>
+          <th>Marks</th>
+        </tr>
+        <tr>
+          <td>B.Sc Computer Science</td>
+          <td>Government Arts College, Chennai</td>
+          <td>2025 &ndash; 2028</td>
+          <td>86% (up to sem 2)</td>
+        </tr>
+        <tr>
+          <td>Higher Secondary</td>
+          <td>St. Mary's Hr. Sec. School</td>
+          <td>2025</td>
+          <td>91%</td>
+        </tr>
+        <tr>
+          <td>SSLC</td>
+          <td>St. Mary's Hr. Sec. School</td>
+          <td>2023</td>
+          <td>94%</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <div class="rule"></div>
+      <p>Have a project in mind, or want help with a lab exercise? Send a note.</p>
+
+      <form action="#" method="post">
+        <label for="cname">Your name</label>
+        <input type="text" id="cname" name="cname" required>
+
+        <label for="cmail">Email</label>
+        <input type="email" id="cmail" name="cmail" required>
+
+        <label for="cmsg">Message</label>
+        <textarea id="cmsg" name="cmsg" rows="5" required></textarea>
+
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Anitha Ramesh &middot; Built by hand with HTML and CSS.</p>
+    </footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>

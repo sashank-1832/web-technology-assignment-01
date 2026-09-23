@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9. HTML5 Input Types</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    form { max-width: 560px; }
+    label { display: block; margin-top: 14px; font-weight: bold; }
+    input, select { padding: 6px; margin-top: 4px; border: 1px solid #aaa; }
+    input[type="text"], input[type="email"], input[type="url"],
+    input[type="password"], input[type="search"], input[type="tel"] { width: 300px; }
+    small { display: block; color: #555; font-weight: normal; }
+    button { margin-top: 20px; padding: 9px 20px; }
+    output { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>HTML5 Input Types</h1>
+  <p>Each input below validates itself. Try submitting with wrong values to see the browser's own message.</p>
+
+  <form action="#" method="post">
+
+    <label for="email">Email
+      <small>Must contain @ and a domain</small>
+    </label>
+    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+    <label for="pwd">Password
+      <small>At least 8 characters, hidden as you type</small>
+    </label>
+    <input type="password" id="pwd" name="pwd" minlength="8" required>
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" min="1990-01-01" max="2015-12-31">
+
+    <label for="slot">Appointment Time</label>
+    <input type="time" id="slot" name="slot">
+
+    <label for="month">Joining Month</label>
+    <input type="month" id="month" name="month">
+
+    <label for="week">Exam Week</label>
+    <input type="week" id="week" name="week">
+
+    <label for="age">Age
+      <small>Number between 17 and 60</small>
+    </label>
+    <input type="number" id="age" name="age" min="17" max="60" step="1" value="18">
+
+    <label for="marks">Expected Marks
+      <small>Slider from 0 to 100</small>
+    </label>
+    <input type="range" id="marks" name="marks" min="0" max="100" value="75"
+           oninput="document.getElementById('shown').value = this.value">
+    <output id="shown">75</output>
+
+    <label for="phone">Mobile Number</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10 digits">
+
+    <label for="site">Portfolio URL</label>
+    <input type="url" id="site" name="site" placeholder="https://example.com">
+
+    <label for="fav">Favourite Colour</label>
+    <input type="color" id="fav" name="fav" value="#2f4858">
+
+    <label for="find">Search</label>
+    <input type="search" id="find" name="find" placeholder="Search the site">
+
+    <label for="branch">Branch
+      <small>A datalist gives suggestions but still allows free text</small>
+    </label>
+    <input type="text" id="branch" name="branch" list="branches">
+    <datalist id="branches">
+      <option value="Computer Science">
+      <option value="Information Technology">
+      <option value="Electronics">
+      <option value="Mathematics">
+    </datalist>
+
+    <label for="resume">Resume (PDF)</label>
+    <input type="file" id="resume" name="resume" accept=".pdf">
+
+    <input type="hidden" name="formid" value="reg-2026">
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+  </form>
+
+</body>
+</html>

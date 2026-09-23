@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10. College Timetable</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #fbfaf7; }
+    h1 { margin-bottom: 2px; }
+    .sub { color: #555; margin-top: 0; }
+    table { border-collapse: collapse; width: 100%; max-width: 950px; background: #fff; }
+    th, td { border: 1px solid #98a2ad; padding: 9px 10px; text-align: center; font-size: 0.95rem; }
+    thead th { background: #2f4858; color: #fff; }
+    tbody th { background: #e7edf2; }
+    .break { background: #f2e3c9; font-style: italic; letter-spacing: 1px; }
+    .lab { background: #dff0e4; }
+    .free { background: #f5f5f5; color: #888; }
+    caption { caption-side: top; text-align: left; padding-bottom: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h1>Class Timetable</h1>
+  <p class="sub">II B.Sc Computer Science &mdash; Section A &mdash; Odd Semester 2026</p>
+
+  <table>
+    <caption>Room 204, Second Floor</caption>
+
+    <thead>
+      <tr>
+        <th>Day / Time</th>
+        <th>9:00 &ndash; 9:50</th>
+        <th>9:50 &ndash; 10:40</th>
+        <th>10:55 &ndash; 11:45</th>
+        <th>11:45 &ndash; 12:35</th>
+        <th>1:30 &ndash; 3:10</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th>Monday</th>
+        <td>Web Technology</td>
+        <td>Data Structures</td>
+        <td>DBMS</td>
+        <td>Mathematics</td>
+        <td class="lab" colspan="1">Web Technology Lab</td>
+      </tr>
+      <tr>
+        <th>Tuesday</th>
+        <td>Java Programming</td>
+        <td>Web Technology</td>
+        <td>Data Structures</td>
+        <td>English</td>
+        <td class="lab">Data Structures Lab</td>
+      </tr>
+      <tr>
+        <th>Wednesday</th>
+        <td>DBMS</td>
+        <td>Mathematics</td>
+        <td>Java Programming</td>
+        <td>Web Technology</td>
+        <td class="free">Library Hour</td>
+      </tr>
+      <tr>
+        <th>Thursday</th>
+        <td>Data Structures</td>
+        <td>DBMS</td>
+        <td>English</td>
+        <td>Java Programming</td>
+        <td class="lab">DBMS Lab</td>
+      </tr>
+      <tr>
+        <th>Friday</th>
+        <td>Mathematics</td>
+        <td>Java Programming</td>
+        <td>Web Technology</td>
+        <td>DBMS</td>
+        <td class="free">Seminar</td>
+      </tr>
+      <tr>
+        <th>Saturday</th>
+        <td colspan="4">Remedial Class / Coding Club</td>
+        <td class="free">Holiday</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="6" class="break">Tea break 10:40 &ndash; 10:55 &nbsp; | &nbsp; Lunch break 12:35 &ndash; 1:30</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Staff in charge</h2>
+  <table>
+    <tr>
+      <th>Subject</th>
+      <th>Staff</th>
+      <th>Hours / Week</th>
+    </tr>
+    <tr><td>Web Technology</td><td>Mrs. Lakshmi P</td><td>4 + Lab</td></tr>
+    <tr><td>Data Structures</td><td>Dr. Ramesh K</td><td>3 + Lab</td></tr>
+    <tr><td>DBMS</td><td>Mr. Vignesh T</td><td>4 + Lab</td></tr>
+    <tr><td>Java Programming</td><td>Dr. Saranya B</td><td>4</td></tr>
+    <tr><td>Mathematics</td><td>Mr. Arun J</td><td>3</td></tr>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6. Audio and Video Elements</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.6; }
+    video, audio { margin: 10px 0; }
+    code { background: #eee; padding: 1px 4px; }
+  </style>
+</head>
+<body>
+
+  <h1>Audio and Video in HTML5</h1>
+
+  <h2>1. Audio player</h2>
+  <p>The <code>controls</code> attribute shows the play button, timeline and volume.</p>
+
+  <audio controls>
+    <source src="media/tone.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h3>Audio that loops and starts muted</h3>
+  <audio controls loop muted>
+    <source src="media/tone.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h2>2. Video player</h2>
+  <p>Width and height keep the layout stable while the video loads.</p>
+
+  <video width="480" height="270" controls>
+    <source src="media/sample.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+
+  <h3>Video with a poster image, muted and looping</h3>
+  <video width="480" height="270" controls loop muted poster="images/mountain.svg">
+    <source src="media/sample.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+
+  <h2>3. Common attributes</h2>
+  <ul>
+    <li><code>controls</code> &mdash; shows the player controls</li>
+    <li><code>autoplay</code> &mdash; starts playing automatically (most browsers allow it only when muted)</li>
+    <li><code>loop</code> &mdash; repeats from the start when it ends</li>
+    <li><code>muted</code> &mdash; starts with the sound turned off</li>
+    <li><code>poster</code> &mdash; image shown before the video plays (video only)</li>
+    <li><code>preload</code> &mdash; hint to the browser: <code>none</code>, <code>metadata</code> or <code>auto</code></li>
+  </ul>
+
+  <p><b>Note:</b> the files <code>media/tone.mp3</code> and <code>media/sample.mp4</code>
+     are in the same folder as this page. If you move the page, move the media folder with it.</p>
+
+</body>
+</html>

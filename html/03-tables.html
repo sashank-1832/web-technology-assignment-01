@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. HTML Tables with Merged Cells</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    table { border-collapse: collapse; margin-bottom: 36px; }
+    th, td { border: 1px solid #333; padding: 8px 14px; text-align: left; }
+    th { background: #dce6f1; }
+    caption { font-weight: bold; padding-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Tables</h1>
+
+  <h2>1. Simple table with rows, columns and borders</h2>
+  <table>
+    <caption>Student Marks</caption>
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+      <th>Maths</th>
+      <th>Science</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>Anitha R</td>
+      <td>92</td>
+      <td>88</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>Karthik M</td>
+      <td>78</td>
+      <td>84</td>
+      <td>162</td>
+    </tr>
+    <tr>
+      <td>103</td>
+      <td>Divya S</td>
+      <td>95</td>
+      <td>91</td>
+      <td>186</td>
+    </tr>
+  </table>
+
+  <h2>2. Merged columns using colspan</h2>
+  <table>
+    <caption>Marks Grouped by Subject Type</caption>
+    <tr>
+      <th rowspan="2">Name</th>
+      <th colspan="2">Theory</th>
+      <th colspan="2">Practical</th>
+    </tr>
+    <tr>
+      <th>Maths</th>
+      <th>Physics</th>
+      <th>Chemistry Lab</th>
+      <th>Computer Lab</th>
+    </tr>
+    <tr>
+      <td>Anitha R</td>
+      <td>92</td>
+      <td>85</td>
+      <td>48</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Karthik M</td>
+      <td>78</td>
+      <td>80</td>
+      <td>45</td>
+      <td>47</td>
+    </tr>
+  </table>
+
+  <h2>3. Merged rows using rowspan</h2>
+  <table>
+    <caption>Class Coordinators</caption>
+    <tr>
+      <th>Department</th>
+      <th>Year</th>
+      <th>Coordinator</th>
+    </tr>
+    <tr>
+      <td rowspan="3">Computer Science</td>
+      <td>I Year</td>
+      <td>Dr. Ramesh K</td>
+    </tr>
+    <tr>
+      <td>II Year</td>
+      <td>Mrs. Lakshmi P</td>
+    </tr>
+    <tr>
+      <td>III Year</td>
+      <td>Mr. Vignesh T</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Mathematics</td>
+      <td>I Year</td>
+      <td>Dr. Saranya B</td>
+    </tr>
+    <tr>
+      <td>II Year</td>
+      <td>Mr. Arun J</td>
+    </tr>
+  </table>
+
+  <h2>4. Table with thead, tbody and tfoot</h2>
+  <table>
+    <caption>Monthly Expenses</caption>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Amount (Rs.)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Books</td><td>1200</td></tr>
+      <tr><td>Travel</td><td>800</td></tr>
+      <tr><td>Internet</td><td>600</td></tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Total</th>
+        <th>2600</th>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>

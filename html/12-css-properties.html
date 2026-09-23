@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12. CSS Selectors, Colours, Fonts and the Box Model</title>
+  <style>
+    /* ---------- ELEMENT (TYPE) SELECTOR ---------- */
+    body {
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333333;
+      background-color: #faf9f6;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      letter-spacing: 0.5px;
+      color: rgb(31, 78, 95);
+    }
+
+    h2 {
+      color: #8a3b12;
+      margin-top: 34px;
+    }
+
+    /* ---------- CLASS SELECTOR (.name) ---------- */
+    .box {
+      width: 280px;
+      background-color: #e8f0ee;
+      border: 3px solid #35706a;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    /* ---------- ID SELECTOR (#name) ---------- */
+    #highlight {
+      background-color: hsl(45, 90%, 88%);
+      border-color: #c98a17;
+      border-style: dashed;
+    }
+
+    /* ---------- GROUPING SELECTOR ---------- */
+    .tight, .roomy {
+      border: 2px solid #777;
+      background: #fff;
+      width: 280px;
+      margin-bottom: 14px;
+    }
+
+    .tight  { padding: 4px; }
+    .roomy  { padding: 28px; }
+
+    /* ---------- DESCENDANT SELECTOR ---------- */
+    .demo p { color: #4a4a4a; }
+
+    /* ---------- CHILD SELECTOR ---------- */
+    .demo > span { font-weight: bold; color: #8a3b12; }
+
+    /* ---------- PSEUDO-CLASS SELECTORS ---------- */
+    a:link    { color: #1f4e5f; }
+    a:visited { color: #6b4b7a; }
+    a:hover   { color: #b3541e; text-decoration: none; }
+
+    li:first-child { font-weight: bold; }
+    li:nth-child(even) { background: #eef2f4; }
+
+    /* ---------- ATTRIBUTE SELECTOR ---------- */
+    input[type="text"] {
+      border: 2px solid #35706a;
+      padding: 6px;
+    }
+
+    /* ---------- BORDER STYLES ---------- */
+    .border-demo span {
+      display: inline-block;
+      padding: 10px 16px;
+      margin: 6px;
+      background: #fff;
+    }
+    .b-solid  { border: 3px solid #35706a; }
+    .b-dotted { border: 3px dotted #8a3b12; }
+    .b-double { border: 5px double #1f4e5f; }
+    .b-round  { border: 3px solid #c98a17; border-radius: 20px; }
+
+    /* ---------- COLOUR SWATCHES ---------- */
+    .swatch {
+      display: inline-block;
+      width: 110px;
+      padding: 18px 0;
+      margin: 4px;
+      text-align: center;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+    .c-name { background: teal; }
+    .c-hex  { background: #8a3b12; }
+    .c-rgb  { background: rgb(47, 72, 88); }
+    .c-rgba { background: rgba(47, 72, 88, 0.55); color: #222; }
+    .c-hsl  { background: hsl(340, 45%, 45%); }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Selectors, Colours, Fonts and the Box Model</h1>
+
+  <h2>Colour values</h2>
+  <p>The same colour can be written in several notations:</p>
+  <div>
+    <span class="swatch c-name">teal<br>(name)</span>
+    <span class="swatch c-hex">#8a3b12<br>(hex)</span>
+    <span class="swatch c-rgb">rgb(47,72,88)</span>
+    <span class="swatch c-rgba">rgba(...,0.55)</span>
+    <span class="swatch c-hsl">hsl(340,45%,45%)</span>
+  </div>
+
+  <h2>Fonts</h2>
+  <p style="font-family: Georgia, serif; font-size: 20px;">Georgia, 20px &mdash; a serif face</p>
+  <p style="font-family: Verdana, sans-serif; font-size: 18px;">Verdana, 18px &mdash; a sans-serif face</p>
+  <p style="font-family: 'Courier New', monospace;">Courier New &mdash; a monospace face</p>
+  <p style="font-weight: 700; font-style: italic; text-transform: capitalize; letter-spacing: 2px;">
+    bold, italic, capitalised, with letter spacing
+  </p>
+
+  <h2>The box model: content, padding, border, margin</h2>
+  <div class="box">
+    <b>Standard box</b><br>
+    width 280px, padding 20px, border 3px, margin 20px.
+  </div>
+
+  <div class="box" id="highlight">
+    <b>Same box, styled by an ID</b><br>
+    The ID selector overrides the class because it is more specific.
+  </div>
+
+  <h3>Padding compared</h3>
+  <div class="tight">Padding 4px &mdash; content sits close to the border.</div>
+  <div class="roomy">Padding 28px &mdash; the same text with plenty of breathing room.</div>
+
+  <h2>Border styles</h2>
+  <p class="border-demo">
+    <span class="b-solid">solid</span>
+    <span class="b-dotted">dotted</span>
+    <span class="b-double">double</span>
+    <span class="b-round">rounded</span>
+  </p>
+
+  <h2>Descendant and child selectors</h2>
+  <div class="demo">
+    <p>This paragraph is inside <code>.demo</code>, so <code>.demo p</code> styles it.</p>
+    <span>This span is a direct child of .demo, so .demo &gt; span styles it.</span>
+  </div>
+
+  <h2>Pseudo-classes</h2>
+  <ul>
+    <li>First item is bold</li>
+    <li>Second item has a tinted background</li>
+    <li>Third item is plain</li>
+    <li>Fourth item has a tinted background</li>
+  </ul>
+  <p><a href="11-css-styles.html">Hover over this link to see a:hover</a></p>
+
+  <h2>Attribute selector</h2>
+  <p><input type="text" placeholder="styled by input[type=text]"></p>
+
+</body>
+</html>
